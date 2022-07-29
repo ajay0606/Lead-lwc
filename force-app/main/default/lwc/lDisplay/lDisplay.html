@@ -1,0 +1,17 @@
+<template>
+  
+    
+    <lightning-card title="Lead recent 10">
+        <div class="slds-m-around_medium">
+            <template if:true={data}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={data}
+                    columns={columns}
+                    onrowaction={handleRowsAction}>
+                </lightning-datatable>
+            </template>
+        </div>
+    </lightning-card>
+  
+</template>
