@@ -1,3 +1,8 @@
+/*
+*       Author:- Ajay Suryawanshi
+*
+*
+*/
 import { LightningElement, wire, track } from 'lwc';
 import leDisplay from '@salesforce/apex/LeadDisplay.leDisplay';
 import { NavigationMixin } from 'lightning/navigation';
@@ -31,7 +36,7 @@ export default class LDisplay extends NavigationMixin(LightningElement) {
 
     @wire(leDisplay) leadRecords({error, data}){
         if(data){
-            this.data = data
+            this.data = data;
         }
         else if(error){
             this.data = undefined;
@@ -79,6 +84,16 @@ export default class LDisplay extends NavigationMixin(LightningElement) {
         }
        
     }
+
+    @track openmodel
+    handlePopUp(event){
+        const popUp = event.detail.action.name;
+        if(popUp === 'view'){
+            this.openmodel = true;
+        }
+    }
+
+    
 
 }
 

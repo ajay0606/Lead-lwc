@@ -1,27 +1,33 @@
+/*
+*       Author:- Ajay Suryawanshi
+*
+*
+*/
 public with sharing class LogCall {
     public LogCall() {
 
     }
-/*
-    public static void createTaskNew(Contact[] contacts){
+   
 
-        String[] contactIds = new String[contacts.size()];
+       @AuraEnabled
+       public static void saveLog(String subject, String comments, Id leadContact){
+        try {
 
-        for(Integer i=0; i < contacts.size(); i++){
-            contactIds[i] = contacts[i].getID();
+            Task task = new Task();
+            task.Subject = subject;
+            task.Description = comments;
+            task.WhoId = leadContact;
+            task.OwnerId = UserInfo.getUserId();   
+
+            if(task.Subject != null && task.Description != null){
+
+                insert task;   
+            }
+            
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
         }
-        Task task = new Task();
-	    task.setSubject('Call');
-	    task.setTaskWhoIds(contactIds);
-	    SaveResult[] results = null;
-	    try {
-		    results = connection.create(new Task[] {
-			task
-		});
-	    } catch (ConnectionException ce) {
-		    ce.printStackTrace();
-        }
+       }
 
-    }
-    */
+       
 }
