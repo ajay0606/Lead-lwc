@@ -1,6 +1,6 @@
 #Demo link ->
 
-https://www.linkedin.com/posts/ajay-suryawanshi_lwc-leads-activity-6969850867566931968-dR_M?utm_source=share&utm_medium=member_desktop
+https://drive.google.com/file/d/1YUIsaAV2b5gYh8n4gzFgnCvuLoojwEu9/view?usp=sharing
 # Salesforce DX Project: Next Steps
 
 Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
